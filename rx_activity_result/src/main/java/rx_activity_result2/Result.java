@@ -16,6 +16,7 @@
 
 package rx_activity_result2;
 
+import android.app.Activity;
 import android.content.Intent;
 
 public class Result<T> {
@@ -45,5 +46,17 @@ public class Result<T> {
 
     public T targetUI() {
         return targetUI;
+    }
+
+    public boolean isOk() {
+        return resultCode == Activity.RESULT_OK;
+    }
+
+    public boolean isCanceled() {
+        return resultCode == Activity.RESULT_CANCELED;
+    }
+
+    public boolean isFirstUser() {
+        return resultCode == Activity.RESULT_FIRST_USER;
     }
 }
